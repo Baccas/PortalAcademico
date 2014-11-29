@@ -16,13 +16,16 @@
         </h:head>
 
         <h:body class="back">
+            <h:form>
+                <a href= "welcomePrimefaces.xhtml" >Página de clientes</a>.
+            </h:form>
             
-            <a href= "welcomePrimefaces.xhtml" >Página de clientes</a>.
-            <h:panelGrid columns="1" cellpadding="5">
-                <p:commandButton value="Sign In" type="button" onclick="PF('dlg3').show();" /> 
-            </h:panelGrid>
+                <h:panelGrid columns="1" cellpadding="5">
+                    <p:commandButton value="Sign In" type="button" onclick="PF('dlg3').show();" /> 
+                </h:panelGrid>
             
-            <p:dialog header="Effects" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="200">
+            <p:dialog header="Effects" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="220">
+                
                 <h:panelGrid columns="1" cellpadding="5">
                     <h:outputText value="Login: " />
                     <p:inputText value="" /> <!-- Mudar a mensagem para #{passwordView.password1} -->
@@ -35,11 +38,9 @@
                 
                 <h:form>
                     <p:growl id="growl" life="2000" />
-                    <p:commandButton value="Acessar" action="/welcomePrimefaces?faces-redirect=true" />
+                    <p:commandButton value="Non-Ajax Submit" id="nonAjax" actionListener="#{buttonView.buttonAction}" action="/welcomePrimefaces?faces-redirect=true" ajax="false" />
                 </h:form>
-                    
-                
-                    
+
             </p:dialog>
 
         </h:body>

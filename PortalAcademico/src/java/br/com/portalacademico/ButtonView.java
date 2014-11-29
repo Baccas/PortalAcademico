@@ -17,7 +17,7 @@ import javax.faces.event.ActionEvent;
 @ManagedBean
 public class ButtonView {
     public void buttonAction(ActionEvent actionEvent) {
-        addMessage("Welcome to Primefaces!!");
+        addMessage("Bem vindo ao Portal Academico");
     }
      
     public void addMessage(String summary) {
