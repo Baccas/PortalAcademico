@@ -48,7 +48,25 @@ and open the template in the editor.
 
                 <p:layoutUnit position="center">
                     
-                    <h:outputText value="#{alunoReceive.nome}" />
+                    <h:panelGrid columns="1" cellpadding="5">
+                        <h:outputText value="Nome" />
+                        <p:inputText id="nome" value="#{alunoSend.nome}" /> <!-- Mudar a mensagem para  -->
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5">
+                        <h:outputText value="Matricula: " />
+                        <p:inputText value="#{alunoSend.matricula}" /> <!-- Mudar a mensagem para  -->
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5">
+                        <h:outputText value="Cpf: " />
+                        <p:inputText value="#{alunoSend.cpf}" /> <!-- Mudar a mensagem para  -->
+                    </h:panelGrid>
+                    
+                    <h:form>
+                        <p:growl id="growl" life="2000" />
+                        <p:commandButton value="Submit" id="nonAjax" actionListener="#{alunoSend.salvar}"  action="/welcomePrimefaces?faces-redirect=true" ajax="false" />
+                    </h:form>
                     
                 </p:layoutUnit>
 
