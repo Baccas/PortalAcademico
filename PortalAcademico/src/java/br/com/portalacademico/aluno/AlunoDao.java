@@ -17,6 +17,15 @@ import javax.faces.bean.ManagedBean;
 public class AlunoDao {
 
     private ArrayList<Aluno> repAluno =  new ArrayList();
+    Aluno aluno= new Aluno();
+    
+    public Aluno test(){
+        
+        aluno.setNome("Guilherme");
+        aluno.setCpf(123);
+        aluno.setMatricula(12323);
+        return aluno;
+    }
     
     public void salvar(Aluno vAluno){
         repAluno.add(vAluno);
@@ -31,6 +40,10 @@ public class AlunoDao {
                 i=repAluno.size();
             }
         } 
+    }
+    
+    public Aluno imprimir(){
+        return test();
     }
     
     public ArrayList<Aluno> listar(){

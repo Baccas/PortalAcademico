@@ -5,56 +5,48 @@
  */
 package br.com.portalacademico.aluno;
 
+import java.awt.Desktop;
 import javax.faces.bean.ManagedBean;
+import javax.faces.event.ActionEvent;
 
 /**
  *
- * @author Administrator
+ * @author Elza
  */
 @ManagedBean
-public class Aluno {
-    private String nome;
-    private int matricula;
-    private int cpf;
-        
+public class AlunoSend {
+    Aluno aluno = new Aluno();
+    AlunoDao alunoRep = new AlunoDao();
     
     
     public void setNome(String nome){
-        this.nome=nome;
+        aluno.setNome(nome);
     }
     
     public String getNome(){
-        return nome;
+        return aluno.getNome();
     }
 
-    /**
-     * @return the matricula
-     */
     public int getMatricula() {
-        return matricula;
+        return aluno.getMatricula();
     }
 
-    /**
-     * @param matricula the matricula to set
-     */
     public void setMatricula(int matricula) {
-        this.matricula = matricula;
+        aluno.setMatricula(matricula);
     }
 
-    /**
-     * @return the cpf
-     */
     public int getCpf() {
-        return cpf;
+        return aluno.getCpf();
     }
 
-    /**
-     * @param cpf the cpf to set
-     */
     public void setCpf(int cpf) {
-        this.cpf = cpf;
+        aluno.setCpf(cpf);
     }
     
-       
+    public void salvar(ActionEvent e){
+        alunoRep.salvar(aluno);
+    }
+    
+    
     
 }

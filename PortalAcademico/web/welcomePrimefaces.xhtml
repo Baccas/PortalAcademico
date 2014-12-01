@@ -29,7 +29,7 @@
                 <p:layoutUnit position="west" size="242" header="Menu" collapsible="true">
                     <p:menu>
                         <p:submenu label="Resources">
-                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Demo" url="imprimir.xhtml" />
                             <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
                             <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
                             <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
@@ -40,7 +40,27 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
+                    
+                    <h:panelGrid columns="1" cellpadding="5">
+                        <h:outputText value="Nome" />
+                        <p:inputText id="nome" value="#{alunoSend.nome}" /> <!-- Mudar a mensagem para  -->
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5">
+                        <h:outputText value="Matricula: " />
+                        <p:inputText value="#{alunoSend.matricula}" /> <!-- Mudar a mensagem para  -->
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5">
+                        <h:outputText value="Cpf: " />
+                        <p:inputText value="#{alunoSend.cpf}" /> <!-- Mudar a mensagem para  -->
+                    </h:panelGrid>
+                    
+                    <h:form>
+                        <p:growl id="growl" life="2000" />
+                        <p:commandButton value="Submit" id="nonAjax" actionListener="#{alunoSend.salvar}"  action="/welcomePrimefaces?faces-redirect=true" ajax="false" />
+                    </h:form>
+                    
                 </p:layoutUnit>
 
             </p:layout>
